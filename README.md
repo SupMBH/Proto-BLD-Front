@@ -1,71 +1,26 @@
 
 ## L'architecture du projet :
-Ce projet, dit frontend, est connecté à un service API backend que vous devez aussi lancer en local.
 
+Ce projet, dit frontend, est connecté à un service API backend que vous devez aussi lancer en local.
 Le projet backend se trouve ici: https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-back
 
 ## Organiser son espace de travail :
-Pour une bonne organization, vous pouvez créer un dossier bill-app dans lequel vous allez cloner le projet backend et par la suite, le projet frontend:
 
-Clonez le projet backend dans le dossier bill-app :
-```
-$ git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Back.git
-```
+-Clonez le projet backend 
+-$ npm install sur le repertoire racine de Billed-app-FR-back
+-$ npm run start
+-Vérifiez en terminal que le back est bien audible sur le port 5678 par l'affichage suivant : "Example app listening on port 5678!"
 
-```
-bill-app/
-   - Billed-app-FR-Back
-```
+## Lancez l'application Proto-BLD-Front en local :
 
-Clonez le projet frontend dans le dossier bill-app :
-```
-$ git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Front.git
-```
+-$ npm install dans le dossier racine de Proto-BLD-Front
+-Live server ON sur http://127.0.0.1:3000/   ( pour l'installer $ npm install -g live-server)
 
-```
-bill-app/
-   - Billed-app-FR-Back
-   - Billed-app-FR-Front
-```
+## Lancer tous les tests en local avec Jest :
 
-## Comment lancer l'application en local ?
-
-### étape 1 - Lancer le backend :
-
-Suivez les indications dans le README du projet backend.
-
-### étape 2 - Lancer le frontend :
-
-Allez au repo cloné :
-```
-$ cd Billed-app-FR-Front
-```
-
-Installez les packages npm (décrits dans `package.json`) :
-```
-$ npm install
-```
-
-Installez live-server pour lancer un serveur local :
-```
-$ npm install -g live-server
-```
-
-Lancez l'application :
-```
-$ live-server
-```
-
-Puis allez à l'adresse : `http://127.0.0.1:3000/`
-
-
-## Comment lancer tous les tests en local avec Jest ?
-
-```
 $ npm run test
-```
 
-## Comment lancer un seul test ?
+## Lancer un seul test avec Jest :
 
 Installez jest-cli :
 

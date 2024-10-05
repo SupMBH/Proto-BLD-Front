@@ -7,7 +7,6 @@ import BillsUI from "../views/BillsUI.js"
 import { bills } from "../fixtures/bills.js"
 import { ROUTES_PATH } from "../constants/routes.js";
 import { localStorageMock } from "../__mocks__/localStorage.js";
-
 import router from "../app/Router.js";
 
 describe("Given I am connected as an employee", () => {
@@ -26,6 +25,8 @@ describe("Given I am connected as an employee", () => {
       await waitFor(() => screen.getByTestId('icon-window'))
       const windowIcon = screen.getByTestId('icon-window')
       // À faire : écrire l'expression expect pour vérifier que l'icône est surlignée
+      // EXPRESSION ECRITE ICI
+      expect(windowIcon.classList.contains('active-icon')).toBeTruthy();
     })
 
     // Parcours Employé - Test si les notes de frais sont triées correctement

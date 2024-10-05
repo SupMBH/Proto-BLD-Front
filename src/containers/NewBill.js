@@ -1,3 +1,4 @@
+// PARCOURS EMPLOYE EN MAJORITE
 import { ROUTES_PATH } from '../constants/routes.js'
 import Logout from "./Logout.js"
 

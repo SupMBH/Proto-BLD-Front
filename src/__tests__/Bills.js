@@ -72,13 +72,10 @@ describe("Given I am connected as an employee", () => {
     test("Then each bill should have a view details icon", () => {
       // Injection de l'interface utilisateur des notes de frais dans le DOM
       document.body.innerHTML = BillsUI({ data: bills });
-
       // Récupération de toutes les icônes de visualisation (œil)
       const viewIcons = screen.getAllByTestId("icon-eye");
-
       // Vérification que le nombre d'icônes correspond au nombre de factures
       expect(viewIcons.length).toBe(bills.length); // Vérifie que toutes les factures ont une icône
-
       // Vérifie que chaque icône est bien présente
       viewIcons.forEach(icon => {
         expect(icon).toBeTruthy(); // Vérifie que chaque icône est bien présente
@@ -129,14 +126,11 @@ describe("Given I am connected as an employee", () => {
       // Attente que toutes les icônes de visualisation soient disponibles dans le DOM
       await waitFor(() => screen.getAllByTestId("icon-eye"));
       const handleClickIconEye = jest.spyOn(bill, "handleClickIconEye");
-
       // Récupération des icônes de visualisation et simulation du clic
       const viewIcons = screen.getAllByTestId("icon-eye");
       const testedElement = viewIcons[0];
-
       // Simulation du clic sur l'icône de vue
       userEvent.click(testedElement);
-
       // Vérifie que la méthode handleClickIconEye a été appelée après le clic
       expect(handleClickIconEye).toHaveBeenCalled();
       // Vérification que la méthode modal a été appelée pour afficher la modale

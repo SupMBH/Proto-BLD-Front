@@ -55,6 +55,7 @@ export default class {
       .list()
       .then(snapshot => {
         const bills = snapshot
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
           .map(doc => {
             try {
               // Formatage des données de chaque note de frais (date, statut)
@@ -69,14 +70,14 @@ export default class {
               return {
                 ...doc,
                 date: doc.date, // En cas d'erreur, la date est laissée telle quelle
-                status: formatStatus(doc.status) // Le statut est toujours formaté
-              }
+                status: formatStatus(doc.status), // Le statut est toujours formaté
+              };
             }
-          })
+          });
 
         // Affiche le nombre total de notes de frais (pour déboguer)
         console.log('length', bills.length)
-        return bills
+        return bills;
       })
     }
   }

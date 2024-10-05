@@ -41,7 +41,7 @@ describe("Given I am connected as an employee", () => {
       console.log("Dates avant le tri : ", dates);
 
       // Conversion des dates en objets Date pour effectuer la comparaison
-      const antiChrono = (a, b) => (new Date(a) < new Date(b) ? 1 : -1);
+      const antiChrono = (a, b) => (a < b ? 1 : -1);
       const datesSorted = [...dates].sort(antiChrono);
 
       // DEBUG : Afficher les dates après le tri

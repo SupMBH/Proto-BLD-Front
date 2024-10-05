@@ -42,6 +42,16 @@ export default class NewBill {
     
     // Récupération du fichier sélectionné
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
+
+    // FIX BUG HUNT 1 sur extention image
+     // Vérification de l'extension du fichier pour s'assurer qu'il s'agit bien d'un format image accepté (.jpg, .jpeg, .png)
+     const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+     if (!allowedExtensions.exec(file.name)) {
+       alert('Veuillez télécharger un fichier au format jpg, jpeg, ou png uniquement.');
+       e.target.value = ''; // Réinitialisation de l'input file en cas de format incorrect
+       return;
+     }
+
     // Extraction du nom du fichier
     const filePath = e.target.value.split(/\\/g)
     const fileName = filePath[filePath.length-1]

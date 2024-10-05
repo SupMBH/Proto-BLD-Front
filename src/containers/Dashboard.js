@@ -145,12 +145,19 @@ export default class {
       this.counter ++
     }
 
+    // BUH HUNT 2 : problème de déroulage de plusieurs listes
+    // NOUVEAU CODE avec désactivation de tout évènement click existant avant d'associer l'écouteur à chaque note
+    bills.forEach(bill => {
+      const billElement = $(`#open-bill${bill.id}`);
+      billElement.off("click").on("click", (e) => this.handleEditTicket(e, bill, bills));
+    });    
+    return bills;    
+    /*
     bills.forEach(bill => {
       $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
     })
-
     return bills
-
+    */
   }
 
   getBillsAllUsers = () => {

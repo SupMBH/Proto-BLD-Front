@@ -61,11 +61,6 @@ describe("Given I am connected as an employee", () => {
         expect(icon).toBeTruthy(); // Vérifie que chaque icône est bien présente
       });
     });
-
-
-
-
-
   });
 });
 

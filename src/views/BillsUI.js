@@ -22,6 +22,7 @@ const row = (bill) => {
 const rows = (data) => {
   return (data && data.length) 
     ? data
+      // FIX BUG REPORT 1 TRI AVANT AFFICHAGE
       .sort((a, b) => new Date(b.date) - new Date(a.date))
       .map(bill => 
         row({

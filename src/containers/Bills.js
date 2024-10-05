@@ -55,6 +55,7 @@ export default class {
       .list()
       .then(snapshot => {
         const bills = snapshot
+          // FIX BUG REPORT 1 avec fonction tri
           .sort((a, b) => new Date(b.date) - new Date(a.date))
           .map(doc => {
             try {

@@ -37,14 +37,14 @@ describe("Given I am connected as an employee", () => {
         .getAllByText(/^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/i)
         .map(a => a.innerHTML);
 
-      // DEBUG : Afficher les dates avant le tri
+      // DEBUG BUG REPORT 1 : Afficher les dates avant le tri
       console.log("Dates avant le tri : ", dates);
 
       // Conversion des dates en objets Date pour effectuer la comparaison
       const antiChrono = (a, b) => (a < b ? 1 : -1);
       const datesSorted = [...dates].sort(antiChrono);
 
-      // DEBUG : Afficher les dates après le tri
+      // DEBUG BUG REPORT 1: Afficher les dates après le tri
       console.log("Dates après le tri : ", datesSorted);
 
       // Comparaison des dates : attendu vs reçu
